@@ -1,0 +1,2 @@
+C:\Users\Lucid\Documents\IPMsg\AutoSave\CardFlip\UnitTestProject1\obj\Release\UnitTestProject1.csprojAssemblyReference.cache
+C:\Users\Lucid\Documents\IPMsg\AutoSave\CardFlip\UnitTestProject1\obj\Release\UnitTestProject1.csproj.CoreCompileInputs.cache

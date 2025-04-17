@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CardFlip.Styles">
+    <Color x:Key="MainColor">#3475FF</Color>
+    <Color x:Key="SubColor">#FcFcFd</Color>
+
+    <Color x:Key="IconColor">#808080</Color>
+    <Color x:Key="DefaultIconColor">#808080</Color>
+    <SolidColorBrush x:Key="MainColorBrush" Color="{StaticResource MainColor}"></SolidColorBrush>
+    <SolidColorBrush x:Key="SubColorBrush" Color="{StaticResource SubColor}"></SolidColorBrush>
+    <SolidColorBrush x:Key="IconColorBrush" Color="{StaticResource IconColor}"></SolidColorBrush>
+    <SolidColorBrush x:Key="DefaultIconColorBrush" Color="{StaticResource DefaultIconColor}"></SolidColorBrush>
+</ResourceDictionary>

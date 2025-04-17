@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<MaterialStyles>
+  <DefaultClass>default</DefaultClass>
+  <AnimationProperties>
+    <Speed>Fastest</Speed>
+    <DisableHover>false</DisableHover>
+    <DisableHoverAnimation>false</DisableHoverAnimation>
+    <DisableRipple>false</DisableRipple>
+    <DisableHighlight>false</DisableHighlight>
+    <DisableHighlightAnimation>false</DisableHighlightAnimation>
+  </AnimationProperties>
+  <IconProperties>
+    <ApplicationIcon>Themes\AppIcon.ico</ApplicationIcon>
+    <ApplicationImage>Themes\AppImage.jpg</ApplicationImage>
+    <IconDisplayPercent>1</IconDisplayPercent>
+    <UseStaticIconPercent>true</UseStaticIconPercent>
+  </IconProperties>
+  <ColorPalettes StyleName="default" IsDefault="true" BorderWidth="1" LineWidth="1" HighlightWidth="1">
+    <FontUsed FamilyName="Calibri" Bold="true" Italic="false" Underline="false" SizeInPoints="12" Unit="Point" />
+    <BackColor>
+      <MainColor Web="#F0F0F0" />
+      <TextColor Web="#007ACC" />
+      <BorderColor Web="#007ACC" />
+      <BorderAlpha>255</BorderAlpha>
+      <HoverColor Web="#007ACC" />
+      <HoverAlpha>128</HoverAlpha>
+      <RippleColor Web="#007ACC" />
+      <RippleAlpha>100</RippleAlpha>
+      <HighlightColor Web="#007ACC" />
+      <HighlightAlpha>128</HighlightAlpha>
+      <HintColor Web="#198EFA" />
+      <HintAlpha>200</HintAlpha>
+    </BackColor>
+    <ForeColor>
+      <MainColor Web="#007ACC" />
+      <TextColor Web="#F0F0F0" />
+      <BorderColor Web="#F0F0F0" />
+      <BorderAlpha>255</BorderAlpha>
+      <HoverColor Web="#F0F0F0" />
+      <HoverAlpha>128</HoverAlpha>
+      <RippleColor Web="#F0F0F0" />
+      <RippleAlpha>100</RippleAlpha>
+      <HighlightColor Web="#F0F0F0" />
+      <HighlightAlpha>128</HighlightAlpha>
+      <HintColor Web="DarkGray" />
+      <HintAlpha>200</HintAlpha>
+    </ForeColor>
+    <DisabledColor>
+      <MainColor Web="DarkGray" />
+      <TextColor Web="DimGray" />
+      <BorderColor Web="DimGray" />
+      <BorderAlpha>255</BorderAlpha>
+      <HoverColor Web="#F0F0F0" />
+      <HoverAlpha>128</HoverAlpha>
+      <RippleColor Web="#F0F0F0" />
+      <RippleAlpha>100</RippleAlpha>
+      <HighlightColor Web="#F0F0F0" />
+      <HighlightAlpha>128</HighlightAlpha>
+      <HintColor Web="DimGray" />
+      <HintAlpha>200</HintAlpha>
+    </DisabledColor>
+    <SecondaryDisabledColor>
+      <MainColor Web="DimGray" />
+      <TextColor Web="DarkGray" />
+      <BorderColor Web="DimGray" />
+      <BorderAlpha>255</BorderAlpha>
+      <HoverColor Web="#F0F0F0" />
+      <HoverAlpha>128</HoverAlpha>
+      <RippleColor Web="#F0F0F0" />
+      <RippleAlpha>100</RippleAlpha>
+      <HighlightColor Web="#F0F0F0" />
+      <HighlightAlpha>128</HighlightAlpha>
+      <HintColor Web="DimGray" />
+      <HintAlpha>200</HintAlpha>
+    </SecondaryDisabledColor>
+  </ColorPalettes>
+</MaterialStyles>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="CardFlip.UserControls.CardFlipUserControl.GamePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CardFlip.UserControls.CardFlipUserControl"
+             mc:Ignorable="d"  
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid Background="{StaticResource SubColorBrush}">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <StackPanel   Name="timeLabelContainer"  Width="180" HorizontalAlignment="Right" Margin="15 0" Orientation="Horizontal">
+                <Label Content="Time :" FontSize="15" Foreground="{StaticResource MainColorBrush}" >
+                </Label>
+                <Label Name="timeLabel" FontSize="15" Content="00:00:00" ></Label>
+
+            </StackPanel>
+        </DockPanel>
+        <Grid Grid.Row="1" Name="maincontainer">
+            <Label  Name="StartTimeLabel"  Opacity="30" Foreground="{StaticResource MainColorBrush}" Background="Gainsboro" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" Content="Error" Panel.ZIndex="2">
+                
+            </Label>
+            <Border Panel.ZIndex="1" Name="gamegridContainer"  VerticalAlignment="Stretch" MaxHeight="700" MaxWidth="900"   CornerRadius="13" BorderBrush="Gainsboro" BorderThickness="2" Margin="15 3">
+                <Grid Name="gameGrid">
+
+                </Grid>
+            </Border>
+           
+        </Grid>
+       
+        <Grid  Grid.Row="2">
+            <DockPanel VerticalAlignment="Top" Margin="0 10 0 0" LastChildFill="True">
+                <Button x:Name="resetBtn" FontWeight="DemiBold" HorizontalAlignment="Left" Content="Restart" Margin="25 3"  Click="RestartClick" Height="40" Style="{StaticResource NormalButton }" FontSize="15"  Foreground="White" Background="{StaticResource MainColorBrush}" Width="120">
+                </Button>
+                <Button HorizontalAlignment="Right" FontWeight="DemiBold" Margin="25 3" Name="Start" Click="StartClick" Height="40" Style="{StaticResource NormalButton }" FontSize="15" Content="Start" Foreground="White" Background="{StaticResource MainColorBrush}" Width="120"></Button>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

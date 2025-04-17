@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="LucidDesk.UserControls.Common.CustomTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CardFlip.UserControls.Common"
+             mc:Ignorable="d" d:DesignHeight="38.667"   d:DesignWidth="250" Padding="0"    >
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderBox" TargetType="Border">
+            <Setter Property="BorderBrush" Value="Gainsboro"/>
+            <Setter Property="BorderThickness" Value="0 0 0 2.4"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsKeyboardFocusWithin,ElementName=Textbox}" Value="True">
+                    <Setter Property="BorderBrush" Value="{DynamicResource MainColorBrush}"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 2.4"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border  CornerRadius="4" Background="{Binding TextboxBackground}" BorderBrush="{Binding TextboxBorderBrush}" Style="{StaticResource BorderBox}" >
+        <Grid Margin="0">
+            <PasswordBox x:Name="PasswordTextBox" Visibility="Hidden" PasswordChanged="PasswordBoxTextChanged" IsTabStop="True"   Cursor="IBeam"   Margin="0" Padding="{Binding TextPadding}"   FontSize="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=FontSize}" Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=Foreground}"     FontFamily="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=FontFamily}">
+            </PasswordBox>
+            <TextBox Name="Textbox"  BorderThickness="0"  TextChanged="TextboxTextChanged" IsTabStop="True" Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=Background}"  Cursor="IBeam"   Margin="0" Padding="{Binding TextPadding}"    FontSize="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=FontSize}" Text="{Binding Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=Foreground}"   FontFamily="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=FontFamily}">
+            </TextBox>
+            <Label Name="PlaceholderLabel" Cursor="Hand"  Content="{Binding Placeholder}" Background="Transparent"   Padding="20 0 0 0"  VerticalAlignment="Center" FontSize="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=FontSize}"   Foreground="{Binding PlaceholderColor}"></Label>
+        </Grid>
+    </Border>
+</UserControl>

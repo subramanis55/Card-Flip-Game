@@ -1,0 +1,19 @@
+﻿<Application x:Class="CardFlip.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CardFlip"
+             Startup="ApplicationStartup">
+
+        <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles/UIFrameworkStyles.xaml"/>
+                    <ResourceDictionary Source="Styles/ScrollBarStyle.xaml"/>
+                    <ResourceDictionary Source="Styles/Theme.xaml"/>
+                    <ResourceDictionary Source="Styles/DeskCustomStyle.xaml"/>
+                    <ResourceDictionary Source="Styles/Icons.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
+
+</Application>

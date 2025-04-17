@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ApplicationSetting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Subramani</Name>
+  <Gender>Male</Gender>
+  <OnlineServerHostName>SEZ-D18</OnlineServerHostName>
+  <OnlineServerIpAddress>192.168.1.15</OnlineServerIpAddress>
+  <OnlineServerPassword>cardgame*</OnlineServerPassword>
+  <OnlineServerUserName>root</OnlineServerUserName>
+  <OnlineServerDatabaseName>CardFlipGame</OnlineServerDatabaseName>
+  <OnlineServerPort>20000</OnlineServerPort>
+</ApplicationSetting>

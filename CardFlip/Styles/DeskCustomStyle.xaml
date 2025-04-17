@@ -1,0 +1,208 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CardFlip.Styles">
+    <Style x:Key="ShowMoreCheckBox" TargetType="CheckBox">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Foreground" Value="{StaticResource MainColorBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <TextBlock x:Name="Textblock" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="Textblock" Property="TextBlock.Text" Value="Show more" />
+                            <Setter Property="Foreground" Value="{StaticResource MainColorBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="Textblock" Property="TextBlock.Text" Value="Show less" />
+                            <Setter Property="Foreground" Value="Gray" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--<Style x:Key="ButtonCheckBoxSettingPage" TargetType="CheckBox">
+      
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Margin" Value="2 5"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MainColorBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Border x:Name="border" Background="{TemplateBinding Background}"  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter Property="BorderThickness" Value="0 0 0 0"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="BorderThickness" Value="3 0 0 0"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter  Property="Background"  TargetName="border"
+                    Value="{Binding  RelativeSource={RelativeSource Self},Path=Background, Converter={StaticResource ColorReduction},Mode=OneTime}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+    <Style x:Key="ButtonCheckBoxSettingPage" TargetType="CheckBox">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="BorderBrush" Value="{StaticResource MainColorBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid>
+                        <!-- Rounded Rectangle on the Left -->
+                        <Border x:Name="roundedBorder"
+                            Background="{TemplateBinding BorderBrush}" 
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Stretch"
+                            Width="4" 
+                            CornerRadius="2"
+                            Visibility="Collapsed"/>
+                        <!-- Main Content -->
+                            <Border x:Name="border" 
+                            Background="{TemplateBinding Background}"  
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter VerticalAlignment="Center" />
+                            </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Trigger to show the rounded rectangle when checked -->
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="roundedBorder" Property="Visibility" Value="Visible"/>
+                         
+                        </Trigger>
+    
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="roundedBorder" Property="Visibility" Value="Collapsed"/>
+                           
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" 
+                                Value="{Binding RelativeSource={RelativeSource Self}, 
+                                                Path=Background, 
+                                                Converter={StaticResource ColorReduction}, 
+                                                Mode=OneTime}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="SuggestionDeskMenuItem" TargetType="MenuItem">
+       
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border CornerRadius="2" Name="Border" 
+                      
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        Padding="{TemplateBinding Padding}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" 
+                               Margin="3" 
+                               Source="{Binding DesktopImage,Mode=OneTime}"/>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.2*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="1" 
+                                       Padding="25 0 0 0" 
+                                       Name="IdTextBlock" 
+                                       Text="{Binding Id,Mode=OneTime}" 
+                                       FontSize="14" 
+                                       FontWeight="DemiBold"  
+                                       Grid.Row="0"/>
+                                <TextBlock Name="ProfileNameTextBlock" 
+                                       Padding="25 0 0 0" 
+                                       Text="{Binding ProfileName,Mode=OneTime}"  
+                                       FontSize="11" 
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Self},Path=Background,Converter={StaticResource ColorReduction},Mode=OneTime}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AccessIconCheckBox"  TargetType="CheckBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Border CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Padding="{TemplateBinding Padding}"  BorderThickness="{TemplateBinding BorderThickness}" >
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"  Value="true">
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Background" Value="#69C33B"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked"  Value="false">
+                            <Setter Property="Foreground" Value="#B3B4B9"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+               
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="RectangleButton" TargetType="Button" >
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="{StaticResource SubColorBrush}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="0" Padding="6" Background="{TemplateBinding Background}" BorderBrush="White">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self},Path=Background,Converter={StaticResource ColorReduction},Mode=OneTime}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CloseButton"  TargetType="Button" >
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="0" Padding="6" Background="{TemplateBinding Background}" BorderBrush="White">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="#FF432D"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

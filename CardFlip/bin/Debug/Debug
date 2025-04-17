@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ApplicationSetting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OnlineServerHostName>SUBRAMANI</OnlineServerHostName>
+  <OnlineServerIpAddress>192.168.75.126</OnlineServerIpAddress>
+  <OnlineServerPassword />
+  <OnlineServerUserName>root</OnlineServerUserName>
+  <OnlineServerDatabaseName>CardFlipGame</OnlineServerDatabaseName>
+  <OnlineServerPort>20000</OnlineServerPort>
+</ApplicationSetting>
