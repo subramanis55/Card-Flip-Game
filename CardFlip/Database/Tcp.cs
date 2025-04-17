@@ -92,7 +92,7 @@ namespace CardFlip.Database
         {
             try
             {
-                clientSocket.EndSend(ar);
+                clientSocket?.EndSend(ar);
             }
             catch
             {
@@ -103,7 +103,7 @@ namespace CardFlip.Database
         {
             try
             {
-                clientSocket.EndReceive(ar);
+                clientSocket?.EndReceive(ar);
                 if (sizeBuffer[0] == 1)
                 {
                     StartGame?.Invoke(null, EventArgs.Empty);
@@ -112,7 +112,7 @@ namespace CardFlip.Database
                 {
                     StopGame?.Invoke(null, EventArgs.Empty);
                 }
-                clientSocket.BeginReceive(sizeBuffer, 0, 5, SocketFlags.None, new AsyncCallback(ClientReceiveSizeCallBack), clientSocket);
+                clientSocket?.BeginReceive(sizeBuffer, 0, 5, SocketFlags.None, new AsyncCallback(ClientReceiveSizeCallBack), clientSocket);
             }
             catch
             {

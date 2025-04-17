@@ -26,7 +26,7 @@ namespace CardFlip.UserControls.CardFlipUserControl
     {
         private List<Result> results;
         private int position;
-        private bool IsMemeImageShow=false;
+        private bool IsMemeImageShow=true;
         public List<Result> Results
         {
             set

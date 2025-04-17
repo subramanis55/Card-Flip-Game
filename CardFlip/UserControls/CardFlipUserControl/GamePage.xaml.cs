@@ -212,7 +212,7 @@ namespace CardFlip.UserControls.CardFlipUserControl
             {
                 for (int j = 0; j < col; j++)
                 {
-                    AddControlsIngrid(gameGrid, new FlipControl(), i, j);
+                    AddControlsIngrid(gameGrid, new FlipControl() { Margin=new Thickness(15)}, i, j);
                 }
             }
             AssignIcons();
@@ -255,7 +255,6 @@ namespace CardFlip.UserControls.CardFlipUserControl
                     int index = rand.Next(icons.Count);
                     flipControl.ImageID = icons[index].Key;
                     flipControl.ImageSource = icons[index].Value;
-                    flipControl.Margin = new Thickness(8);
                     flipControl.MouseDown += CardClick;
                     icons.RemoveAt(index);
                 }

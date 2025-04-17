@@ -22,10 +22,9 @@
                         <Path VerticalAlignment="Stretch" Height="500" Width="500"  HorizontalAlignment="Stretch" Stroke="{StaticResource SubColorBrush}" Fill="White" StrokeThickness="20"  Data="{StaticResource Reset}" ></Path>
                     </Viewbox>
                 </Button>
-               
             </DockPanel>
         
-            <ScrollViewer Grid.Row="1" Padding="15">
+            <ScrollViewer    Grid.Row="1"  Padding="15">
                 <Grid x:Name="container">
                     <!-- We'll dynamically change this layout from code-behind -->
 
@@ -41,19 +40,21 @@
                     </Grid.RowDefinitions>
 
                     <!-- ScrollViewerContainer -->
-                    <Border  Margin="8" Grid.Column="0" Grid.Row="0"  CornerRadius="10" BorderThickness="2" BorderBrush="Gainsboro"   MinHeight="400" MinWidth="400" x:Name="ScrollViewerContainer" >
-                        <StackPanel  >
-                            <Label HorizontalAlignment="Center" FontSize="17" FontWeight="Bold" Content="Result" Foreground="Black"></Label>
-                            <ScrollViewer  MaxHeight="550"  Margin="10" >
-                                <StackPanel MinWidth="400"  Name="resultPanel" Margin="14"/>
+                    <Border  Margin="8" Grid.Column="0" Grid.Row="0"  CornerRadius="10" BorderThickness="2" BorderBrush="Gainsboro"    x:Name="ScrollViewerContainer" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" HorizontalAlignment="Center" FontSize="17" FontWeight="Bold" Content="Result" Foreground="Black"></Label>
+                            <ScrollViewer MaxHeight="770"  Grid.Row="1"  Margin="10">
+                                <StackPanel   Name="resultPanel" Margin="14"/>
                             </ScrollViewer>
-                        </StackPanel>
-
-
+                        </Grid>
                     </Border>
 
                     <!-- ImageContainer -->
-                    <Border  Margin="8" Grid.Column="1" Grid.Row="0"  CornerRadius="10" BorderThickness="2" BorderBrush="Gainsboro" MinHeight="400" MinWidth="400"   x:Name="ImageContainer">
+                    <Border  Margin="8" Grid.Column="1" Grid.Row="0"  CornerRadius="10" BorderThickness="2" BorderBrush="Gainsboro"    x:Name="ImageContainer">
                         <usercontrol:RoundedImage  x:Name="MemeImage" Style="{StaticResource RoundedImage}" MaxHeight="500"  VerticalAlignment="Center" Margin="25" HorizontalAlignment="Center" Stretch="Fill" ZoomFactor="1"   CornerRadius="10" MinWidth="350" MinHeight="350" />
                     </Border>
                 </Grid>
